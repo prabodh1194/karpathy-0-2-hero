@@ -48,6 +48,21 @@ def draw_root(root: Value, render: bool = False) -> Digraph:
     return dot
 
 
+def build_topo(root: Value) -> list[Value]:
+    visited = set()
+    ans: list[Value] = []
+
+    def _topo(v: Value) -> None:
+        if v not in visited:
+            visited.add(v)
+            for child in v._prev:
+                _topo(child)
+            ans.append(v)
+
+    _topo(root)
+    return ans
+
+
 class Value:
     def __init__(
         self,
@@ -58,24 +73,54 @@ class Value:
     ):
         self.data = data
         self.grad = 0.0
+        self._backward = lambda: None
         self._prev = set(_children)
         self._op = _op
         self.label = label
 
     def __repr__(self) -> str:
-        return f"Value(data={self.data})"
+        return f"Value(data={self.data}, label={self.label})"
 
     def __add__(self, other: Self) -> Value:
-        return Value(self.data + other.data, (self, other), "+")
+        out = Value(self.data + other.data, (self, other), "+")
+
+        def _backward() -> None:
+            self.grad = 1.0 * out.grad
+            other.grad = 1.0 * out.grad
+
+        out._backward = _backward
+
+        return out
 
     def __mul__(self, other: Self) -> Value:
-        return Value(self.data * other.data, (self, other), "*")
+        out = Value(self.data * other.data, (self, other), "*")
+
+        def _backward() -> None:
+            self.grad = out.grad * other.data
+            other.grad = out.grad * self.data
+
+        out._backward = _backward
+
+        return out
 
     def tanh(self) -> Value:
         x = self.data
         t = (math.exp(2 * x) - 1) / (math.exp(2 * x) + 1)
+        out = Value(t, (self,), "tanh")
 
-        return Value(t, (self,), "tanh")
+        def _backward() -> None:
+            self.grad = (1 - t**2) * out.grad
+
+        out._backward = _backward
+
+        return out
+
+    def backward(self) -> None:
+        self.grad = 1.0
+        topo = build_topo(self)
+
+        for n in reversed(topo):
+            n._backward()
 
 
 def lol() -> None:
