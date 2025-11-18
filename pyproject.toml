@@ -13,6 +13,9 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.1.0",
+    "jupyter[all]>=1.1.1",
+    "jupyterlab[all]>=4.4.10",
     "mypy>=1.18.2",
     "pre-commit>=4.0.1",
     "ruff>=0.14.5",

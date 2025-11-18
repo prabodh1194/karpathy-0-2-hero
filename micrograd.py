@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import Self
 from graphviz import Digraph
+import math
 
 
 def trace(root: Value) -> tuple[set[Value], set[tuple[Value, Value]]]:
@@ -19,14 +20,18 @@ def trace(root: Value) -> tuple[set[Value], set[tuple[Value, Value]]]:
     return nodes, edges
 
 
-def draw_root(root: Value) -> None:
+def draw_root(root: Value, render: bool = False) -> Digraph:
     dot = Digraph(format="svg", graph_attr={"rankdir": "LR"})  # LR = left to right
 
     nodes, edges = trace(root)
     for n in nodes:
         uid = str(id(n))
         # for any value in the graph, create a rectangular ('record') node for it
-        dot.node(name=uid, label=f"{{ {n.label} | data {n.data:.4f} }}", shape="record")
+        dot.node(
+            name=uid,
+            label=f"{{ {n.label} | data {n.data:.4f} | grad {n.grad:.4f} }}",
+            shape="record",
+        )
         if n._op:
             # if this value is a result of some operation, create an op node for it
             dot.node(name=uid + n._op, label=n._op)
@@ -37,7 +42,10 @@ def draw_root(root: Value) -> None:
         # connect n1 to the op node of n2
         dot.edge(str(id(n1)), str(id(n2)) + n2._op)
 
-    dot.render("graph", view=True, cleanup=True)
+    if render:
+        dot.render("graph", view=True, cleanup=True)
+
+    return dot
 
 
 class Value:
@@ -49,6 +57,7 @@ class Value:
         label: str = "",
     ):
         self.data = data
+        self.grad = 0.0
         self._prev = set(_children)
         self._op = _op
         self.label = label
@@ -62,14 +71,52 @@ class Value:
     def __mul__(self, other: Self) -> Value:
         return Value(self.data * other.data, (self, other), "*")
 
+    def tanh(self) -> Value:
+        x = self.data
+        t = (math.exp(2 * x) - 1) / (math.exp(2 * x) + 1)
 
-if __name__ == "__main__":
+        return Value(t, (self,), "tanh")
+
+
+def lol() -> None:
+    h = 0.001
+
+    a = Value(2.0, label="a")
+    b = Value(-3.0, label="b")
+    c = Value(10.0, label="c")
+    e = a * b
+    e.label = "e"
+    d = e + c
+    d.label = "d"
+    f = Value(-2.0, label="f")
+    L = d * f
+    L.label = "L"
+
+    L1 = L.data
+
+    L.grad = 1.0
+    d.grad = -2.0
+    f.grad = 4.0
+    c.grad = 1.0 * -2.0  # chain rule
+    e.grad = 1.0 * -2.0  # chain rule
+    a.grad = -2.0 * -3.0  # chain rule
+    b.grad = -2.0 * 2.0  # chain rule
+    draw_root(L)
+
+    a.data += a.grad * 0.01
+    b.data += b.grad * 0.01
+    c.data += c.grad * 0.01
+    f.data += f.grad * 0.01
+    L = (a * b + c) * f
+    print(L)
+
     a = Value(2.0, label="a")
     b = Value(-3.0, label="b")
     c = Value(10.0, label="c")
 
     e = a * b
     e.label = "e"
+
     d = e + c
     d.label = "d"
 
@@ -77,6 +124,10 @@ if __name__ == "__main__":
 
     L = d * f
     L.label = "L"
+    L2 = L.data
 
-    print(d, d._prev, d._op)
-    draw_root(L)
+    print(L1, L2, (L2 - L1) / h)
+
+
+if __name__ == "__main__":
+    lol()
