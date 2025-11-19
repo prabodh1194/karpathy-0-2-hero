@@ -1,4 +1,5 @@
-from micrograd import Value, draw_root
+from graph_util import draw_root
+from micrograd import Value
 
 x1 = Value(2.0, label="x1")
 x2 = Value(0.0, label="x2")
