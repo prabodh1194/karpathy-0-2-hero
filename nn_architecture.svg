@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- White background -->
+  <rect width="800" height="600" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">
+    MLP(3, [4, 4, 1]) - 41 Parameters
+  </text>
+
+  <!-- Layer Labels -->
+  <text x="100" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Input</text>
+  <text x="280" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Layer 1</text>
+  <text x="460" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Layer 2</text>
+  <text x="640" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Output</text>
+
+  <!-- Input neurons (3) -->
+  <circle cx="100" cy="150" r="20" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <circle cx="100" cy="250" r="20" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <circle cx="100" cy="350" r="20" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+
+  <!-- Layer 1 neurons (4) -->
+  <circle cx="280" cy="120" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <circle cx="280" cy="210" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <circle cx="280" cy="300" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <circle cx="280" cy="390" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+
+  <!-- Layer 2 neurons (4) -->
+  <circle cx="460" cy="120" r="20" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <circle cx="460" cy="210" r="20" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <circle cx="460" cy="300" r="20" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <circle cx="460" cy="390" r="20" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+
+  <!-- Output neuron (1) -->
+  <circle cx="640" cy="255" r="20" fill="#e8f5e9" stroke="#388e3c" stroke-width="2"/>
+
+  <!-- Connections Input to Layer 1 (showing only a few for clarity) -->
+  <line x1="120" y1="150" x2="260" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="150" x2="260" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="150" x2="260" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="150" x2="260" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <line x1="120" y1="250" x2="260" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="250" x2="260" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="250" x2="260" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="250" x2="260" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <line x1="120" y1="350" x2="260" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="350" x2="260" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="350" x2="260" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="120" y1="350" x2="260" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <!-- Connections Layer 1 to Layer 2 -->
+  <line x1="300" y1="120" x2="440" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="120" x2="440" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="120" x2="440" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="120" x2="440" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <line x1="300" y1="210" x2="440" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="210" x2="440" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="210" x2="440" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="210" x2="440" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <line x1="300" y1="300" x2="440" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="300" x2="440" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="300" x2="440" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="300" x2="440" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <line x1="300" y1="390" x2="440" y2="120" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="390" x2="440" y2="210" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="390" x2="440" y2="300" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="390" x2="440" y2="390" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <!-- Connections Layer 2 to Output -->
+  <line x1="480" y1="120" x2="620" y2="255" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="480" y1="210" x2="620" y2="255" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="480" y1="300" x2="620" y2="255" stroke="#999" stroke-width="1" opacity="0.3"/>
+  <line x1="480" y1="390" x2="620" y2="255" stroke="#999" stroke-width="1" opacity="0.3"/>
+
+  <!-- Parameter count boxes -->
+  <!-- Input to Layer 1 -->
+  <rect x="150" y="440" width="180" height="100" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="5"/>
+  <text x="240" y="465" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Layer 1: 3→4</text>
+  <text x="240" y="490" font-size="12" text-anchor="middle" fill="#333">Weights: 3 × 4 = 12</text>
+  <text x="240" y="510" font-size="12" text-anchor="middle" fill="#333">Biases: 4</text>
+  <text x="240" y="530" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">Total: 16</text>
+
+  <!-- Layer 1 to Layer 2 -->
+  <rect x="350" y="440" width="180" height="100" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="5"/>
+  <text x="440" y="465" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">Layer 2: 4→4</text>
+  <text x="440" y="490" font-size="12" text-anchor="middle" fill="#333">Weights: 4 × 4 = 16</text>
+  <text x="440" y="510" font-size="12" text-anchor="middle" fill="#333">Biases: 4</text>
+  <text x="440" y="530" font-size="13" font-weight="bold" text-anchor="middle" fill="#4a148c">Total: 20</text>
+
+  <!-- Layer 2 to Output -->
+  <rect x="550" y="440" width="180" height="100" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="640" y="465" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Output: 4→1</text>
+  <text x="640" y="490" font-size="12" text-anchor="middle" fill="#333">Weights: 4 × 1 = 4</text>
+  <text x="640" y="510" font-size="12" text-anchor="middle" fill="#333">Biases: 1</text>
+  <text x="640" y="530" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b5e20">Total: 5</text>
+
+  <!-- Grand total -->
+  <rect x="250" y="560" width="300" height="30" fill="#ffeb3b" stroke="#f57f17" stroke-width="3" rx="5"/>
+  <text x="400" y="582" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+    TOTAL: 16 + 20 + 5 = 41 parameters
+  </text>
+</svg>
