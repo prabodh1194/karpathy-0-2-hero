@@ -1,5 +1,6 @@
 import random
 from operator import mul
+from typing import Sequence
 
 from micrograd import Value
 
@@ -9,7 +10,7 @@ class Neuron:
         self.w = [Value(random.uniform(-1, 1)) for _ in range(nin)]
         self.b = Value(random.uniform(-1, 1))
 
-    def __call__(self, x: list[int]) -> Value:
+    def __call__(self, x: Sequence[Value | float]) -> Value:
         act = sum(map(mul, self.w, x), self.b)
         out = act.tanh()
         return out
@@ -21,10 +22,10 @@ class Neuron:
 class Layer:
     def __init__(
         self, nin: int, nout: int
-    ):  # number of neurons making up a layer; nout is the number of neurons in the layer
+    ) -> None:  # number of neurons making up a layer; nout is the number of neurons in the layer
         self.neurons = [Neuron(nin) for _ in range(nout)]
 
-    def __call__(self, x: list[int]) -> Value | list[Value]:
+    def __call__(self, x: Sequence[Value | float]) -> Value | list[Value]:
         outs = [n(x) for n in self.neurons]
         return outs[0] if len(outs) == 1 else outs
 
@@ -42,10 +43,11 @@ class MLP:  # multi layer perceptron
         sz = [nin] + nouts
         self.layers = [Layer(sz[i], sz[i + 1]) for i in range(len(nouts))]
 
-    def __call__(self, x: list) -> list:
+    def __call__(self, x: Sequence[Value | float]) -> Value | list[Value]:
+        out: Sequence[Value | float] | Value | list[Value] = x
         for layer in self.layers:
-            x = layer(x)
-        return x
+            out = layer(out)  # type: ignore[arg-type]
+        return out  # type: ignore[return-value]
 
-    def parameters(self):
+    def parameters(self) -> list[Value]:
         return [p for layer in self.layers for p in layer.parameters()]
