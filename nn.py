@@ -18,6 +18,9 @@ class Neuron:
     def parameters(self) -> list[Value]:
         return self.w + [self.b]
 
+    def __repr__(self) -> str:
+        return f"Neuron({self.w})"
+
 
 class Layer:
     def __init__(
@@ -34,6 +37,9 @@ class Layer:
         for neuron in self.neurons:
             params.extend(neuron.parameters())
         return params
+
+    def __repr__(self) -> str:
+        return f"Layer of [{', '.join(map(str, self.neurons))}]"
 
 
 class MLP:  # multi layer perceptron
@@ -55,3 +61,6 @@ class MLP:  # multi layer perceptron
     def zero_grad(self) -> None:
         for p in self.parameters():
             p.grad = 0.0
+
+    def __repr__(self) -> str:
+        return f"MLP of [\n{',\n'.join(map(str, self.layers))}\n]"

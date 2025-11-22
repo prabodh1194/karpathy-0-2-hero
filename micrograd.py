@@ -34,7 +34,7 @@ class Value:
         self.label = label
 
     def __repr__(self) -> str:
-        return f"Value(data={self.data}, label={self.label})"
+        return f"Value(data={self.data})"
 
     def __add__(self, other: Self) -> Value:
         other = other if isinstance(other, Value) else Value(other)
