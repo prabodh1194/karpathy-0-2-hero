@@ -51,3 +51,7 @@ class MLP:  # multi layer perceptron
 
     def parameters(self) -> list[Value]:
         return [p for layer in self.layers for p in layer.parameters()]
+
+    def zero_grad(self) -> None:
+        for p in self.parameters():
+            p.grad = 0.0

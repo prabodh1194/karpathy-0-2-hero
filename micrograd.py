@@ -87,6 +87,16 @@ class Value:
     def __sub__(self, other: Value) -> Value:
         return self + (-other)
 
+    def relu(self) -> Value:
+        out = Value(max(0, self.data), (self,), "relu")
+
+        def _backward() -> None:
+            self.grad += (out.data > 0) * out.grad
+
+        out._backward = _backward
+
+        return out
+
     def tanh(self) -> Value:
         x = self.data
         t = (math.exp(2 * x) - 1) / (math.exp(2 * x) + 1)
