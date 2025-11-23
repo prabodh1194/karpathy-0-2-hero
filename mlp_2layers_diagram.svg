@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <!-- White background -->
+  <rect width="1000" height="700" fill="white"/>
+
+  <!-- Title -->
+  <text x="500" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">
+    MLP(2, [4, 4, 1]) - 2 Hidden Layers, 4 Neurons Each
+  </text>
+
+  <!-- Layer Labels -->
+  <text x="100" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Input</text>
+  <text x="280" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Hidden Layer 1</text>
+  <text x="520" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Hidden Layer 2</text>
+  <text x="760" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Output</text>
+
+  <!-- Input neurons (2) -->
+  <circle cx="100" cy="250" r="25" fill="#e3f2fd" stroke="#1976d2" stroke-width="3"/>
+  <text x="100" y="257" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">x[0]</text>
+
+  <circle cx="100" cy="400" r="25" fill="#e3f2fd" stroke="#1976d2" stroke-width="3"/>
+  <text x="100" y="407" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">x[1]</text>
+
+  <!-- Hidden Layer 1 neurons (4) -->
+  <circle cx="280" cy="150" r="22" fill="#fff3e0" stroke="#f57c00" stroke-width="3"/>
+  <text x="280" y="157" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">N₁</text>
+
+  <circle cx="280" cy="250" r="22" fill="#fff3e0" stroke="#f57c00" stroke-width="3"/>
+  <text x="280" y="257" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">N₂</text>
+
+  <circle cx="280" cy="400" r="22" fill="#fff3e0" stroke="#f57c00" stroke-width="3"/>
+  <text x="280" y="407" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">N₃</text>
+
+  <circle cx="280" cy="500" r="22" fill="#fff3e0" stroke="#f57c00" stroke-width="3"/>
+  <text x="280" y="507" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">N₄</text>
+
+  <!-- Hidden Layer 2 neurons (4) -->
+  <circle cx="520" cy="150" r="22" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="3"/>
+  <text x="520" y="157" font-size="13" font-weight="bold" text-anchor="middle" fill="#4a148c">N₅</text>
+
+  <circle cx="520" cy="250" r="22" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="3"/>
+  <text x="520" y="257" font-size="13" font-weight="bold" text-anchor="middle" fill="#4a148c">N₆</text>
+
+  <circle cx="520" cy="400" r="22" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="3"/>
+  <text x="520" y="407" font-size="13" font-weight="bold" text-anchor="middle" fill="#4a148c">N₇</text>
+
+  <circle cx="520" cy="500" r="22" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="3"/>
+  <text x="520" y="507" font-size="13" font-weight="bold" text-anchor="middle" fill="#4a148c">N₈</text>
+
+  <!-- Output neuron (1) -->
+  <circle cx="760" cy="325" r="25" fill="#e8f5e9" stroke="#388e3c" stroke-width="3"/>
+  <text x="760" y="332" font-size="14" font-weight="bold" text-anchor="middle" fill="#388e3c">y</text>
+
+  <!-- Connections Input to Layer 1 (all connections shown) -->
+  <line x1="125" y1="250" x2="258" y2="150" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="125" y1="250" x2="258" y2="250" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="125" y1="250" x2="258" y2="400" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="125" y1="250" x2="258" y2="500" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+
+  <line x1="125" y1="400" x2="258" y2="150" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="125" y1="400" x2="258" y2="250" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="125" y1="400" x2="258" y2="400" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="125" y1="400" x2="258" y2="500" stroke="#1976d2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Connections Layer 1 to Layer 2 (all connections shown) -->
+  <line x1="302" y1="150" x2="498" y2="150" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="150" x2="498" y2="250" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="150" x2="498" y2="400" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="150" x2="498" y2="500" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+
+  <line x1="302" y1="250" x2="498" y2="150" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="250" x2="498" y2="250" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="250" x2="498" y2="400" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="250" x2="498" y2="500" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+
+  <line x1="302" y1="400" x2="498" y2="150" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="400" x2="498" y2="250" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="400" x2="498" y2="400" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="400" x2="498" y2="500" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+
+  <line x1="302" y1="500" x2="498" y2="150" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="500" x2="498" y2="250" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="500" x2="498" y2="400" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="302" y1="500" x2="498" y2="500" stroke="#f57c00" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Connections Layer 2 to Output (all connections shown) -->
+  <line x1="542" y1="150" x2="735" y2="325" stroke="#7b1fa2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="542" y1="250" x2="735" y2="325" stroke="#7b1fa2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="542" y1="400" x2="735" y2="325" stroke="#7b1fa2" stroke-width="1.5" opacity="0.4"/>
+  <line x1="542" y1="500" x2="735" y2="325" stroke="#7b1fa2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Parameter count boxes -->
+  <rect x="50" y="570" width="280" height="110" fill="#fff3e0" stroke="#f57c00" stroke-width="3" rx="8"/>
+  <text x="190" y="595" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Layer 1: 2 → 4</text>
+  <text x="190" y="620" font-size="12" text-anchor="middle" fill="#333">Weights: 2 × 4 = 8</text>
+  <text x="190" y="640" font-size="12" text-anchor="middle" fill="#333">Biases: 4</text>
+  <text x="190" y="665" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">Total: 12 params</text>
+
+  <rect x="360" y="570" width="280" height="110" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="3" rx="8"/>
+  <text x="500" y="595" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">Layer 2: 4 → 4</text>
+  <text x="500" y="620" font-size="12" text-anchor="middle" fill="#333">Weights: 4 × 4 = 16</text>
+  <text x="500" y="640" font-size="12" text-anchor="middle" fill="#333">Biases: 4</text>
+  <text x="500" y="665" font-size="13" font-weight="bold" text-anchor="middle" fill="#4a148c">Total: 20 params</text>
+
+  <rect x="670" y="570" width="280" height="110" fill="#e8f5e9" stroke="#388e3c" stroke-width="3" rx="8"/>
+  <text x="810" y="595" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Output: 4 → 1</text>
+  <text x="810" y="620" font-size="12" text-anchor="middle" fill="#333">Weights: 4 × 1 = 4</text>
+  <text x="810" y="640" font-size="12" text-anchor="middle" fill="#333">Biases: 1</text>
+  <text x="810" y="665" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b5e20">Total: 5 params</text>
+
+  <!-- Grand total -->
+  <rect x="350" y="100" width="300" height="35" fill="#ffeb3b" stroke="#f57f17" stroke-width="3" rx="8"/>
+  <text x="500" y="125" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+    TOTAL: 12 + 20 + 5 = 37 parameters
+  </text>
+
+  <!-- Annotation -->
+  <text x="500" y="555" font-size="12" text-anchor="middle" fill="#666" font-style="italic">
+    All parameters created once, shared across all training samples
+  </text>
+</svg>

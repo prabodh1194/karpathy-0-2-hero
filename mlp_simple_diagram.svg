@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- White background -->
+  <rect width="800" height="600" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">
+    MLP(2, [1]) - Single Layer, Single Neuron
+  </text>
+
+  <!-- Layer Labels -->
+  <text x="150" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Input Layer</text>
+  <text x="400" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Hidden Layer</text>
+  <text x="650" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Output</text>
+
+  <!-- Input neurons (2) -->
+  <circle cx="150" cy="200" r="25" fill="#e3f2fd" stroke="#1976d2" stroke-width="3"/>
+  <text x="150" y="207" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">x[0]</text>
+
+  <circle cx="150" cy="350" r="25" fill="#e3f2fd" stroke="#1976d2" stroke-width="3"/>
+  <text x="150" y="357" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">x[1]</text>
+
+  <!-- Hidden layer neuron (1) -->
+  <circle cx="400" cy="275" r="35" fill="#fff3e0" stroke="#f57c00" stroke-width="3"/>
+  <text x="400" y="283" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">N</text>
+
+  <!-- Output neuron (1) -->
+  <circle cx="650" cy="275" r="25" fill="#e8f5e9" stroke="#388e3c" stroke-width="3"/>
+  <text x="650" y="282" font-size="14" font-weight="bold" text-anchor="middle" fill="#388e3c">y</text>
+
+  <!-- Connections Input to Hidden -->
+  <line x1="175" y1="200" x2="365" y2="275" stroke="#1976d2" stroke-width="2"/>
+  <text x="250" y="220" font-size="12" fill="#f57c00" font-weight="bold">w[0]</text>
+
+  <line x1="175" y1="350" x2="365" y2="275" stroke="#1976d2" stroke-width="2"/>
+  <text x="250" y="330" font-size="12" fill="#f57c00" font-weight="bold">w[1]</text>
+
+  <!-- Bias arrow -->
+  <line x1="350" y1="150" x2="385" y2="245" stroke="#9c27b0" stroke-width="2" stroke-dasharray="5,5"/>
+  <circle cx="350" cy="150" r="15" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+  <text x="350" y="155" font-size="11" font-weight="bold" text-anchor="middle" fill="#9c27b0">b</text>
+
+  <!-- Connection Hidden to Output -->
+  <line x1="435" y1="275" x2="625" y2="275" stroke="#f57c00" stroke-width="2"/>
+  <text x="530" y="265" font-size="12" fill="#388e3c" font-weight="bold">tanh</text>
+
+  <!-- Parameter count box -->
+  <rect x="50" y="450" width="700" height="120" fill="#fff9c4" stroke="#f57f17" stroke-width="3" rx="10"/>
+
+  <text x="400" y="480" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+    Parameters (created ONCE, shared across all samples)
+  </text>
+
+  <text x="70" y="510" font-size="13" fill="#333">
+    • Weights: w[0], w[1] (2 parameters) - connect inputs to neuron
+  </text>
+  <text x="70" y="535" font-size="13" fill="#333">
+    • Bias: b (1 parameter) - added to weighted sum
+  </text>
+  <text x="70" y="560" font-size="13" font-weight="bold" fill="#f57f17">
+    Total: 3 parameters (all have fixed memory addresses/ids)
+  </text>
+
+  <!-- Annotation boxes -->
+  <rect x="50" y="100" width="200" height="60" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="150" y="120" font-size="12" font-weight="bold" text-anchor="middle" fill="#1976d2">Input: 2 features</text>
+  <text x="150" y="140" font-size="11" text-anchor="middle" fill="#666">Each sample has</text>
+  <text x="150" y="155" font-size="11" text-anchor="middle" fill="#666">x[0] and x[1]</text>
+
+  <rect x="300" y="370" width="200" height="60" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="5"/>
+  <text x="400" y="390" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">Neuron Operation</text>
+  <text x="400" y="410" font-size="11" text-anchor="middle" fill="#666">n = w[0]·x[0] + w[1]·x[1] + b</text>
+  <text x="400" y="425" font-size="11" text-anchor="middle" fill="#666">output = tanh(n)</text>
+
+  <rect x="550" y="100" width="200" height="60" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="650" y="120" font-size="12" font-weight="bold" text-anchor="middle" fill="#388e3c">Output: 1 value</text>
+  <text x="650" y="140" font-size="11" text-anchor="middle" fill="#666">Prediction for</text>
+  <text x="650" y="155" font-size="11" text-anchor="middle" fill="#666">this sample</text>
+</svg>
