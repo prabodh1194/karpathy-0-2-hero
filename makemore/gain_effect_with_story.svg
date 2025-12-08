@@ -6,7 +6,7 @@
 
   <!-- Three scenarios -->
 
-  <!-- Scenario 1: gain = 0.5 (too small) -->
+  <!-- Scenario 1: gain = 0.5 (too small) - VANISHING -->
   <g id="gain_small">
     <rect x="20" y="60" width="440" height="950" fill="#FFEBEE" stroke="#C62828" stroke-width="3" rx="10"/>
     <text x="240" y="95" font-size="18" font-weight="bold" text-anchor="middle" fill="#C62828">
@@ -16,94 +16,108 @@
       "The Fading Signal" 📉
     </text>
 
-    <!-- Histograms -->
+    <!-- Histograms with actual bars -->
     <text x="50" y="155" font-size="12" font-weight="bold" fill="#333">Layer 3 (deep):</text>
-    <path d="M 240 180 Q 240 165, 250 165 L 230 165 Q 240 165, 240 180 Z"
-          fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
-    <text x="350" y="172" font-size="10" fill="#C62828">grad ≈ 0.001 (barely visible!)</text>
+    <!-- Almost flat - tiny bars -->
+    <rect x="200" y="175" width="8" height="2" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="210" y="173" width="8" height="4" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="220" y="172" width="8" height="5" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="230" y="173" width="8" height="4" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="240" y="175" width="8" height="2" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <line x1="195" y1="177" x2="253" y2="177" stroke="#999" stroke-width="0.5"/>
+    <text x="350" y="175" font-size="10" fill="#C62828">≈0.001 (barely visible!)</text>
 
     <text x="50" y="225" font-size="12" font-weight="bold" fill="#333">Layer 2:</text>
-    <path d="M 240 250 Q 220 230, 260 230 Q 240 230, 240 250 Z"
-          fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
-    <text x="350" y="242" font-size="10" fill="#C62828">grad ≈ 0.01 (very flat)</text>
+    <!-- Flat - small bars -->
+    <rect x="200" y="264" width="8" height="6" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="210" y="256" width="8" height="14" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="220" y="252" width="8" height="18" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="230" y="256" width="8" height="14" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="240" y="264" width="8" height="6" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <line x1="195" y1="270" x2="253" y2="270" stroke="#999" stroke-width="0.5"/>
+    <text x="350" y="264" font-size="10" fill="#C62828">≈0.01 (very flat)</text>
 
-    <text x="50" y="295" font-size="12" font-weight="bold" fill="#333">Layer 1:</text>
-    <path d="M 240 320 Q 210 285, 270 285 Q 240 285, 240 320 Z"
-          fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
-    <text x="350" y="307" font-size="10" fill="#EF6C00">grad ≈ 0.1 (flattening)</text>
+    <text x="50" y="305" font-size="12" font-weight="bold" fill="#333">Layer 1:</text>
+    <!-- Getting taller -->
+    <rect x="195" y="353" width="8" height="17" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="205" y="340" width="8" height="30" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="215" y="330" width="8" height="40" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="225" y="330" width="8" height="40" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="235" y="340" width="8" height="30" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <rect x="245" y="353" width="8" height="17" fill="#FFCDD2" stroke="#C62828" stroke-width="0.5"/>
+    <line x1="190" y1="370" x2="258" y2="370" stroke="#999" stroke-width="0.5"/>
+    <text x="350" y="348" font-size="10" fill="#EF6C00">≈0.1 (flattening)</text>
 
-    <text x="50" y="365" font-size="12" font-weight="bold" fill="#333">Layer 0 (shallow):</text>
-    <path d="M 240 390 Q 190 340, 290 340 Q 240 340, 240 390 Z"
-          fill="#FFCDD2" stroke="#C62828" stroke-width="2"/>
-    <text x="350" y="372" font-size="10" fill="#2E7D32">grad ≈ 0.5 (only decent one)</text>
+    <text x="50" y="395" font-size="12" font-weight="bold" fill="#333">Layer 0 (shallow):</text>
+    <!-- Nice bell curve -->
+    <rect x="185" y="453" width="10" height="27" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <rect x="197" y="440" width="10" height="40" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <rect x="209" y="425" width="10" height="55" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <rect x="221" y="420" width="10" height="60" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <rect x="233" y="425" width="10" height="55" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <rect x="245" y="440" width="10" height="40" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <rect x="257" y="453" width="10" height="27" fill="#FFCDD2" stroke="#C62828" stroke-width="1"/>
+    <line x1="180" y1="480" x2="272" y2="480" stroke="#999" stroke-width="1"/>
+    <text x="350" y="451" font-size="10" fill="#2E7D32">≈0.5 (only decent one)</text>
 
     <!-- Story -->
-    <rect x="40" y="430" width="400" height="560" fill="white" stroke="#C62828" stroke-width="2" rx="5"/>
-    <text x="240" y="460" font-size="14" font-weight="bold" text-anchor="middle" fill="#C62828">
+    <rect x="40" y="510" width="400" height="480" fill="white" stroke="#C62828" stroke-width="2" rx="5"/>
+    <text x="240" y="540" font-size="14" font-weight="bold" text-anchor="middle" fill="#C62828">
       📖 The Story:
     </text>
 
-    <text x="50" y="490" font-size="11" font-weight="bold" fill="#333">What "signal" means:</text>
-    <text x="60" y="510" font-size="10" fill="#333">Signal = the gradient that tells a layer</text>
-    <text x="60" y="525" font-size="10" fill="#333">"how much to update your weights"</text>
+    <text x="50" y="570" font-size="11" font-weight="bold" fill="#333">What "signal" means:</text>
+    <text x="60" y="590" font-size="10" fill="#333">Signal = the gradient magnitude that tells</text>
+    <text x="60" y="605" font-size="10" fill="#333">a layer "how much to update your weights"</text>
 
-    <text x="50" y="555" font-size="11" font-weight="bold" fill="#333">What "learning" means:</text>
-    <text x="60" y="575" font-size="10" fill="#333">Learning = updating weights based on</text>
-    <text x="60" y="590" font-size="10" fill="#333">the gradient: new_W = old_W - lr * grad</text>
+    <text x="50" y="635" font-size="11" font-weight="bold" fill="#333">What "learning" means:</text>
+    <text x="60" y="655" font-size="10" fill="#333">Learning = updating weights:</text>
+    <text x="60" y="670" font-size="10" fill="#333" font-family="monospace">new_W = old_W - lr × gradient</text>
 
-    <rect x="50" y="610" width="380" height="140" fill="#FFEBEE" rx="3"/>
-    <text x="240" y="635" font-size="11" font-weight="bold" text-anchor="middle" fill="#C62828">
+    <rect x="50" y="690" width="380" height="120" fill="#FFEBEE" rx="3"/>
+    <text x="240" y="715" font-size="11" font-weight="bold" text-anchor="middle" fill="#C62828">
       🎭 The Drama:
     </text>
-    <text x="60" y="660" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 3:</tspan> "I got a gradient of 0.001? That's
+    <text x="60" y="740" font-size="10" fill="#333">
+      <tspan font-weight="bold">Layer 3:</tspan> "Gradient of 0.001? I can barely
     </text>
-    <text x="60" y="675" font-size="10" fill="#333">
-      nothing! I can barely update my weights!"
+    <text x="60" y="755" font-size="10" fill="#333">
+      update! I'm learning 500x slower than Layer 0!"
     </text>
-    <text x="60" y="695" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 2:</tspan> "Mine is 0.01... still too weak."
+    <text x="60" y="775" font-size="10" fill="#333">
+      <tspan font-weight="bold">Layer 2:</tspan> "0.01 is still too weak..."
     </text>
-    <text x="60" y="715" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 1:</tspan> "0.1 is better but not great."
-    </text>
-    <text x="60" y="735" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 0:</tspan> "I got 0.5! I'm learning fast!"
-    </text>
-
-    <rect x="50" y="760" width="380" height="110" fill="#FFF9C4" rx="3"/>
-    <text x="240" y="785" font-size="11" font-weight="bold" text-anchor="middle" fill="#F57C00">
-      ⚠️ The Problem:
+    <text x="60" y="795" font-size="10" fill="#333">
+      <tspan font-weight="bold">Layer 0:</tspan> "I got 0.5! I'm learning fast but
     </text>
     <text x="60" y="810" font-size="10" fill="#333">
-      • Deep layers learn 500x slower than
-    </text>
-    <text x="60" y="825" font-size="10" fill="#333">
-         shallow layers (0.001 vs 0.5)
-    </text>
-    <text x="60" y="845" font-size="10" fill="#333">
-      • Training is "incoherent" - layers at
-    </text>
-    <text x="60" y="860" font-size="10" fill="#333">
-         wildly different speeds
+      my deep friends are stuck!"
     </text>
 
-    <rect x="50" y="880" width="380" height="100" fill="#E1F5FE" rx="3"/>
-    <text x="240" y="905" font-size="11" font-weight="bold" text-anchor="middle" fill="#0277BD">
-      🔍 What You See in Histogram:
+    <rect x="50" y="820" width="380" height="80" fill="#FFF9C4" rx="3"/>
+    <text x="240" y="845" font-size="11" font-weight="bold" text-anchor="middle" fill="#F57C00">
+      ⚠️ The Problem:
     </text>
-    <text x="60" y="930" font-size="10" fill="#333">
-      Each layer's curve at a different height
+    <text x="60" y="870" font-size="10" fill="#333">
+      Deep layers learn 500x slower! Training
     </text>
-    <text x="60" y="945" font-size="10" fill="#333">
-      (y-axis scale) - they're "far apart" and
+    <text x="60" y="885" font-size="10" fill="#333">
+      is "incoherent" - histogram bars get smaller
+    </text>
+
+    <rect x="50" y="910" width="380" height="70" fill="#E1F5FE" rx="3"/>
+    <text x="240" y="935" font-size="11" font-weight="bold" text-anchor="middle" fill="#0277BD">
+      🔍 Histogram Shows:
     </text>
     <text x="60" y="960" font-size="10" fill="#333">
-      getting progressively flatter (wider/lower)
+      Bars getting progressively shorter and
+    </text>
+    <text x="60" y="975" font-size="10" fill="#333">
+      flatter - they're "far apart" in height
     </text>
   </g>
 
-  <!-- Scenario 2: gain = 5/3 (perfect) -->
+  <!-- Scenario 2: gain = 5/3 (perfect) - ALL SIMILAR -->
   <g id="gain_perfect">
     <rect x="480" y="60" width="440" height="950" fill="#E8F5E9" stroke="#2E7D32" stroke-width="4" rx="10"/>
     <text x="700" y="95" font-size="18" font-weight="bold" text-anchor="middle" fill="#2E7D32">
@@ -113,94 +127,114 @@
       "The Balanced Symphony" 🎵
     </text>
 
-    <!-- Histograms - all similar -->
+    <!-- All histograms identical - nice bell curves -->
     <text x="510" y="155" font-size="12" font-weight="bold" fill="#333">Layer 3 (deep):</text>
-    <path d="M 700 180 Q 660 140, 740 140 Q 700 140, 700 180 Z"
-          fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"/>
-    <text x="810" y="167" font-size="10" fill="#2E7D32">grad ≈ 0.8</text>
+    <rect x="645" y="187" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="657" y="174" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="669" y="159" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="681" y="154" width="10" height="56" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="693" y="159" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="705" y="174" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="717" y="187" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <line x1="640" y1="210" x2="732" y2="210" stroke="#999" stroke-width="1"/>
+    <text x="810" y="187" font-size="10" fill="#2E7D32">≈0.8</text>
 
-    <text x="510" y="225" font-size="12" font-weight="bold" fill="#333">Layer 2:</text>
-    <path d="M 700 250 Q 660 210, 740 210 Q 700 210, 700 250 Z"
-          fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"/>
-    <text x="810" y="237" font-size="10" fill="#2E7D32">grad ≈ 0.8</text>
+    <text x="510" y="245" font-size="12" font-weight="bold" fill="#333">Layer 2:</text>
+    <rect x="645" y="277" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="657" y="264" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="669" y="249" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="681" y="244" width="10" height="56" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="693" y="249" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="705" y="264" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="717" y="277" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <line x1="640" y1="300" x2="732" y2="300" stroke="#999" stroke-width="1"/>
+    <text x="810" y="277" font-size="10" fill="#2E7D32">≈0.8</text>
 
-    <text x="510" y="295" font-size="12" font-weight="bold" fill="#333">Layer 1:</text>
-    <path d="M 700 320 Q 660 280, 740 280 Q 700 280, 700 320 Z"
-          fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"/>
-    <text x="810" y="307" font-size="10" fill="#2E7D32">grad ≈ 0.8</text>
+    <text x="510" y="335" font-size="12" font-weight="bold" fill="#333">Layer 1:</text>
+    <rect x="645" y="367" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="657" y="354" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="669" y="339" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="681" y="334" width="10" height="56" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="693" y="339" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="705" y="354" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="717" y="367" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <line x1="640" y1="390" x2="732" y2="390" stroke="#999" stroke-width="1"/>
+    <text x="810" y="367" font-size="10" fill="#2E7D32">≈0.8</text>
 
-    <text x="510" y="365" font-size="12" font-weight="bold" fill="#333">Layer 0 (shallow):</text>
-    <path d="M 700 390 Q 660 350, 740 350 Q 700 350, 700 390 Z"
-          fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"/>
-    <text x="810" y="377" font-size="10" fill="#2E7D32">grad ≈ 0.8</text>
+    <text x="510" y="425" font-size="12" font-weight="bold" fill="#333">Layer 0 (shallow):</text>
+    <rect x="645" y="457" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="657" y="444" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="669" y="429" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="681" y="424" width="10" height="56" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="693" y="429" width="10" height="51" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="705" y="444" width="10" height="36" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <rect x="717" y="457" width="10" height="23" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1"/>
+    <line x1="640" y1="480" x2="732" y2="480" stroke="#999" stroke-width="1"/>
+    <text x="810" y="457" font-size="10" fill="#2E7D32">≈0.8</text>
 
     <!-- Story -->
-    <rect x="500" y="430" width="400" height="560" fill="white" stroke="#2E7D32" stroke-width="2" rx="5"/>
-    <text x="700" y="460" font-size="14" font-weight="bold" text-anchor="middle" fill="#2E7D32">
+    <rect x="500" y="510" width="400" height="480" fill="white" stroke="#2E7D32" stroke-width="2" rx="5"/>
+    <text x="700" y="540" font-size="14" font-weight="bold" text-anchor="middle" fill="#2E7D32">
       📖 The Story:
     </text>
 
-    <text x="510" y="490" font-size="11" font-weight="bold" fill="#333">What "signal" means:</text>
-    <text x="520" y="510" font-size="10" fill="#333">Signal = gradient magnitude</text>
-    <text x="520" y="525" font-size="10" fill="#333">Stronger signal → bigger weight updates</text>
+    <text x="510" y="570" font-size="11" font-weight="bold" fill="#333">What's happening:</text>
+    <text x="520" y="590" font-size="10" fill="#333">All layers get similar gradient magnitude</text>
+    <text x="520" y="605" font-size="10" fill="#333">(~0.8) → all learn at the same rate!</text>
 
-    <text x="510" y="555" font-size="11" font-weight="bold" fill="#333">What "learning" means:</text>
-    <text x="520" y="575" font-size="10" fill="#333">When grad = 0.8 → weights change by</text>
-    <text x="520" y="590" font-size="10" fill="#333">0.001 * 0.8 = 0.0008 (if lr = 0.001)</text>
-
-    <rect x="510" y="610" width="380" height="140" fill="#E8F5E9" rx="3"/>
-    <text x="700" y="635" font-size="11" font-weight="bold" text-anchor="middle" fill="#2E7D32">
+    <rect x="510" y="625" width="380" height="110" fill="#E8F5E9" rx="3"/>
+    <text x="700" y="650" font-size="11" font-weight="bold" text-anchor="middle" fill="#2E7D32">
       🎭 The Drama:
     </text>
-    <text x="520" y="660" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 3:</tspan> "Gradient of 0.8 - I can learn!"
+    <text x="520" y="675" font-size="10" fill="#333">
+      <tspan font-weight="bold">All Layers:</tspan> "We all got gradients of ~0.8!
     </text>
-    <text x="520" y="680" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 2:</tspan> "Mine is 0.8 too - perfect!"
+    <text x="520" y="690" font-size="10" fill="#333">
+      We're all updating our weights by the same
     </text>
-    <text x="520" y="700" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 1:</tspan> "0.8 here as well - nice!"
+    <text x="520" y="705" font-size="10" fill="#333">
+      amount. We're learning together as a team!
     </text>
-    <text x="520" y="720" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 0:</tspan> "Also 0.8 - we're all learning
-    </text>
-    <text x="520" y="735" font-size="10" fill="#333">
-      at the same rate!"
+    <text x="520" y="725" font-size="10" fill="#333">
+      This is what healthy training feels like!"
     </text>
 
-    <rect x="510" y="760" width="380" height="110" fill="#FFF9C4" rx="3"/>
-    <text x="700" y="785" font-size="11" font-weight="bold" text-anchor="middle" fill="#F57C00">
+    <rect x="510" y="745" width="380" height="90" fill="#FFF9C4" rx="3"/>
+    <text x="700" y="770" font-size="11" font-weight="bold" text-anchor="middle" fill="#F57C00">
       ✨ The Magic:
     </text>
-    <text x="520" y="810" font-size="10" fill="#333">
-      • All layers update weights by similar
+    <text x="520" y="795" font-size="10" fill="#333">
+      When grad = 0.8 for all layers:
+    </text>
+    <text x="520" y="810" font-size="10" fill="#333" font-family="monospace">
+      weight_change = 0.001 × 0.8 = 0.0008
     </text>
     <text x="520" y="825" font-size="10" fill="#333">
-         amounts (all get ~0.8 gradient)
-    </text>
-    <text x="520" y="845" font-size="10" fill="#333">
-      • Network learns as a coherent whole
-    </text>
-    <text x="520" y="860" font-size="10" fill="#333">
-      • Training is stable and efficient
+      Same for every layer → coherent learning!
     </text>
 
-    <rect x="510" y="880" width="380" height="100" fill="#E1F5FE" rx="3"/>
-    <text x="700" y="905" font-size="11" font-weight="bold" text-anchor="middle" fill="#0277BD">
-      🔍 What You See in Histogram:
+    <rect x="510" y="845" width="380" height="135" fill="#E1F5FE" rx="3"/>
+    <text x="700" y="870" font-size="11" font-weight="bold" text-anchor="middle" fill="#0277BD">
+      🔍 Histogram Shows:
     </text>
-    <text x="520" y="930" font-size="10" fill="#333">
-      All curves overlap beautifully - same
+    <text x="520" y="895" font-size="10" fill="#333">
+      All four bell curves are IDENTICAL:
     </text>
-    <text x="520" y="945" font-size="10" fill="#333">
-      height, same width, all centered at 0.
+    <text x="520" y="910" font-size="10" fill="#333">
+      • Same height (y-axis scale)
+    </text>
+    <text x="520" y="925" font-size="10" fill="#333">
+      • Same width (spread)
+    </text>
+    <text x="520" y="940" font-size="10" fill="#333">
+      • All centered at 0
     </text>
     <text x="520" y="960" font-size="10" fill="#333">
-      Like a well-tuned orchestra! 🎻
+      They overlap perfectly! 🎻
     </text>
   </g>
 
-  <!-- Scenario 3: gain = 3 (too large) -->
+  <!-- Scenario 3: gain = 3 (too large) - ASYMMETRIC -->
   <g id="gain_large">
     <rect x="940" y="60" width="440" height="950" fill="#FFF3E0" stroke="#E65100" stroke-width="3" rx="10"/>
     <text x="1160" y="95" font-size="18" font-weight="bold" text-anchor="middle" fill="#E65100">
@@ -210,100 +244,113 @@
       "The Chaos" 💥
     </text>
 
-    <!-- Histograms - asymmetric -->
+    <!-- Layer 3: Dead - single spike at 0 -->
     <text x="970" y="155" font-size="12" font-weight="bold" fill="#333">Layer 3 (deep):</text>
-    <line x1="1160" y1="165" x2="1160" y2="185" stroke="#E65100" stroke-width="4"/>
-    <text x="1270" y="177" font-size="10" fill="#C62828">grad ≈ 0 (DEAD spike!)</text>
+    <rect x="1156" y="170" width="8" height="40" fill="#FFB74D" stroke="#E65100" stroke-width="1"/>
+    <line x1="1140" y1="210" x2="1180" y2="210" stroke="#999" stroke-width="0.5"/>
+    <text x="1270" y="192" font-size="10" fill="#C62828">≈0 (DEAD spike at 0!)</text>
 
-    <text x="970" y="225" font-size="12" font-weight="bold" fill="#333">Layer 2:</text>
-    <line x1="1160" y1="235" x2="1160" y2="255" stroke="#E65100" stroke-width="4"/>
-    <text x="1270" y="247" font-size="10" fill="#C62828">grad ≈ 0 (DEAD spike!)</text>
+    <!-- Layer 2: Dead - single spike at 0 -->
+    <text x="970" y="245" font-size="12" font-weight="bold" fill="#333">Layer 2:</text>
+    <rect x="1156" y="260" width="8" height="40" fill="#FFB74D" stroke="#E65100" stroke-width="1"/>
+    <line x1="1140" y1="300" x2="1180" y2="300" stroke="#999" stroke-width="0.5"/>
+    <text x="1270" y="282" font-size="10" fill="#C62828">≈0 (DEAD spike at 0!)</text>
 
-    <text x="970" y="295" font-size="12" font-weight="bold" fill="#333">Layer 1:</text>
-    <path d="M 1160 320 Q 1100 285, 1220 285 Q 1160 285, 1160 320 Z"
-          fill="#FFE0B2" stroke="#E65100" stroke-width="1"/>
-    <text x="1270" y="307" font-size="10" fill="#EF6C00">grad ≈ 2.5 (wide)</text>
+    <!-- Layer 1: Wide distribution -->
+    <text x="970" y="335" font-size="12" font-weight="bold" fill="#333">Layer 1:</text>
+    <rect x="1090" y="377" width="12" height="23" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1104" y="367" width="12" height="33" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1118" y="357" width="12" height="43" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1132" y="352" width="12" height="48" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1146" y="347" width="12" height="53" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1160" y="352" width="12" height="48" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1174" y="357" width="12" height="43" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1188" y="367" width="12" height="33" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1202" y="377" width="12" height="23" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <line x1="1085" y1="400" x2="1219" y2="400" stroke="#999" stroke-width="0.5"/>
+    <text x="1270" y="377" font-size="10" fill="#EF6C00">≈2.5 (too wide)</text>
 
-    <text x="970" y="365" font-size="12" font-weight="bold" fill="#333">Layer 0 (shallow):</text>
-    <path d="M 1160 390 Q 1050 340, 1270 340 Q 1160 340, 1160 390 Z"
-          fill="#FFE0B2" stroke="#E65100" stroke-width="1"/>
-    <text x="1270" y="372" font-size="10" fill="#C62828">grad ≈ 10 (EXPLODING!)</text>
+    <!-- Layer 0: VERY wide - exploding -->
+    <text x="970" y="435" font-size="12" font-weight="bold" fill="#333">Layer 0 (shallow):</text>
+    <rect x="1050" y="487" width="15" height="13" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1067" y="480" width="15" height="20" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1084" y="470" width="15" height="30" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1101" y="460" width="15" height="40" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1118" y="450" width="15" height="50" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1135" y="445" width="15" height="55" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1152" y="450" width="15" height="50" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1169" y="460" width="15" height="40" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1186" y="470" width="15" height="30" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1203" y="480" width="15" height="20" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <rect x="1220" y="487" width="15" height="13" fill="#FFE0B2" stroke="#E65100" stroke-width="0.5"/>
+    <line x1="1045" y1="500" x2="1240" y2="500" stroke="#999" stroke-width="0.5"/>
+    <text x="1270" y="475" font-size="10" fill="#C62828">≈10 (EXPLODING!)</text>
 
     <!-- Story -->
-    <rect x="960" y="430" width="400" height="560" fill="white" stroke="#E65100" stroke-width="2" rx="5"/>
-    <text x="1160" y="460" font-size="14" font-weight="bold" text-anchor="middle" fill="#E65100">
+    <rect x="960" y="530" width="400" height="460" fill="white" stroke="#E65100" stroke-width="2" rx="5"/>
+    <text x="1160" y="560" font-size="14" font-weight="bold" text-anchor="middle" fill="#E65100">
       📖 The Story:
     </text>
 
-    <text x="970" y="490" font-size="11" font-weight="bold" fill="#333">What happened:</text>
-    <text x="980" y="510" font-size="10" fill="#333">Weights were too large → activations</text>
-    <text x="980" y="525" font-size="10" fill="#333">hit tanh extremes (±1) → saturated!</text>
+    <text x="970" y="590" font-size="11" font-weight="bold" fill="#333">What happened:</text>
+    <text x="980" y="610" font-size="10" fill="#333">Large weights → activations hit tanh limits</text>
+    <text x="980" y="625" font-size="10" fill="#333">(±1) → saturated → derivative ≈ 0!</text>
 
-    <text x="970" y="555" font-size="11" font-weight="bold" fill="#333">Saturated = dead gradient:</text>
-    <text x="980" y="575" font-size="10" fill="#333">When tanh output ≈ ±1, derivative ≈ 0</text>
-    <text x="980" y="590" font-size="10" fill="#333">→ gradient can't flow backward</text>
-
-    <rect x="970" y="610" width="380" height="140" fill="#FFF3E0" rx="3"/>
-    <text x="1160" y="635" font-size="11" font-weight="bold" text-anchor="middle" fill="#E65100">
+    <rect x="970" y="645" width="380" height="130" fill="#FFF3E0" rx="3"/>
+    <text x="1160" y="670" font-size="11" font-weight="bold" text-anchor="middle" fill="#E65100">
       🎭 The Drama:
     </text>
-    <text x="980" y="660" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 3:</tspan> "I'm stuck at ±1! Gradient is
-    </text>
-    <text x="980" y="675" font-size="10" fill="#333">
-      zero! I'm DEAD! Can't learn anything!"
-    </text>
     <text x="980" y="695" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 2:</tspan> "Same here - totally frozen!"
+      <tspan font-weight="bold">Layer 3 &amp; 2:</tspan> "We're saturated at ±1!
     </text>
-    <text x="980" y="715" font-size="10" fill="#333">
+    <text x="980" y="710" font-size="10" fill="#333">
+      Gradient is ZERO! We can't learn at all!"
+    </text>
+    <text x="980" y="730" font-size="10" fill="#333">
       <tspan font-weight="bold">Layer 1:</tspan> "My gradient is 2.5 - too big!"
     </text>
-    <text x="980" y="735" font-size="10" fill="#333">
-      <tspan font-weight="bold">Layer 0:</tspan> "Mine is 10! I'm changing way
-    </text>
     <text x="980" y="750" font-size="10" fill="#333">
-      too fast - this is chaos!"
+      <tspan font-weight="bold">Layer 0:</tspan> "Mine is 10! I'm updating way
+    </text>
+    <text x="980" y="765" font-size="10" fill="#333">
+      too fast - this will never converge!"
     </text>
 
-    <rect x="970" y="760" width="380" height="110" fill="#FFF9C4" rx="3"/>
-    <text x="1160" y="785" font-size="11" font-weight="bold" text-anchor="middle" fill="#F57C00">
+    <rect x="970" y="785" width="380" height="90" fill="#FFF9C4" rx="3"/>
+    <text x="1160" y="810" font-size="11" font-weight="bold" text-anchor="middle" fill="#F57C00">
       ⚠️ The Problem:
     </text>
-    <text x="980" y="810" font-size="10" fill="#333">
-      • Deep layers: saturated → can't learn
+    <text x="980" y="835" font-size="10" fill="#333">
+      Mixed: vanishing (deep) + exploding (shallow)
     </text>
-    <text x="980" y="825" font-size="10" fill="#333">
-      • Shallow layers: exploding → unstable
+    <text x="980" y="850" font-size="10" fill="#333">
+      "Asymmetric" - some dead, some crazy
     </text>
-    <text x="980" y="845" font-size="10" fill="#333">
-      • "Asymmetric" - some dead, some crazy
-    </text>
-    <text x="980" y="860" font-size="10" fill="#333">
-      • Training will fail!
+    <text x="980" y="865" font-size="10" fill="#333">
+      Training will fail!
     </text>
 
-    <rect x="970" y="880" width="380" height="100" fill="#E1F5FE" rx="3"/>
-    <text x="1160" y="905" font-size="11" font-weight="bold" text-anchor="middle" fill="#0277BD">
-      🔍 What You See in Histogram:
+    <rect x="970" y="885" width="380" height="95" fill="#E1F5FE" rx="3"/>
+    <text x="1160" y="910" font-size="11" font-weight="bold" text-anchor="middle" fill="#0277BD">
+      🔍 Histogram Shows:
     </text>
-    <text x="980" y="930" font-size="10" fill="#333">
-      Deep layers: sharp spikes at 0 (dead)
+    <text x="980" y="935" font-size="10" fill="#333">
+      Deep layers: tall narrow spike at 0 (dead)
     </text>
-    <text x="980" y="945" font-size="10" fill="#333">
-      Shallow layers: very wide, flat (exploding)
+    <text x="980" y="950" font-size="10" fill="#333">
+      Shallow layers: very wide, spread out
     </text>
-    <text x="980" y="960" font-size="10" fill="#333">
-      Weird asymmetry - totally broken!
+    <text x="980" y="965" font-size="10" fill="#333">
+      Totally asymmetric - broken!
     </text>
   </g>
 
   <!-- Bottom key -->
   <rect x="50" y="1030" width="1330" height="50" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" rx="5"/>
   <text x="715" y="1058" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565C0">
-    🔑 Key Insight: "Signal" = gradient magnitude | "Learning" = weight update = lr × gradient
+    🔑 Signal = gradient magnitude | Learning = weight update = learning_rate × gradient
   </text>
   <text x="715" y="1073" font-size="12" text-anchor="middle" fill="#0277BD">
-    gain = 5/3 keeps all layers' gradients similar → all layers learn at the same rate → stable training!
+    gain = 5/3 keeps all histogram bars at the same height → all layers learn together → stable training!
   </text>
 </svg>
